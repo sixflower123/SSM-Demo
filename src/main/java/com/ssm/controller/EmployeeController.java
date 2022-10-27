@@ -1,5 +1,6 @@
 package com.ssm.controller;
 
+import com.alibaba.druid.support.json.JSONUtils;
 import com.github.pagehelper.PageInfo;
 import com.ssm.pojo.Employee;
 import com.ssm.service.EmployeeService;
@@ -28,6 +29,7 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
+
     @RequestMapping(value = "/employee/page/{pageNum}",method = RequestMethod.GET)
     public String getEmployeePage(@PathVariable("pageNum") Integer pageNum, Model model){
         //获取员工的分页信息
@@ -40,6 +42,7 @@ public class EmployeeController {
 
     @RequestMapping(value = "/employee",method = RequestMethod.GET)
     public String getAllEmployee(Model model){
+        System.out.println(123);
         //查询所有的员工信息-->/employee-->get
         List<Employee> list = employeeService.getAllEmployee();
         //将员工信息在请求域中共享
