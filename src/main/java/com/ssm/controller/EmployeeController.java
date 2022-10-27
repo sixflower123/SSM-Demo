@@ -44,6 +44,7 @@ public class EmployeeController {
     public String getAllEmployee(Model model){
         System.out.println(123456+"hot-fix");
         System.out.println("master test!");
+        System.out.println("hot-fix test!");
         //查询所有的员工信息-->/employee-->get
         List<Employee> list = employeeService.getAllEmployee();
         //将员工信息在请求域中共享
